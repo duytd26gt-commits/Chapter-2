@@ -1,0 +1,55 @@
+public class Account {
+    int id;
+    Customer customer;
+    double balance = 0.0;
+
+    public Account(int i, Customer c, double b) {
+        id = i;
+        customer = c;
+        balance = b;
+    }
+
+    public Account(int i, Customer c) {
+        id = i;
+        customer = c;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double b) {
+        balance = b;
+    }
+
+    public String toString() {
+        return String.format("%s balance=$%.2f", customer.toString(), balance);
+    }
+
+    public String getCustomerName() {
+        return customer.getName();
+    }
+
+    public Account deposit(double a) {
+        balance += a;
+        return this;
+    }
+
+    public Account withdraw(double a) {
+        if (balance >= a) {
+            balance -= a;
+        } else {
+            System.out.println("amount exceeded balance");
+
+        }
+        return this;
+    }
+}
