@@ -1,0 +1,46 @@
+public class Invoice {
+    int id;
+    Customer customer;
+    double amount;
+    public Invoice(int i,Customer c,double a){
+        id = i ;
+        customer = c;
+        amount = a;
+    }
+    public int getId(){
+        return id;
+    }
+    public Customer getCustomer(){
+        return customer;
+    }
+    public void setCustomer(Customer c){
+        customer = c;
+    }
+    public double getAmount(){
+        return amount;
+    }
+    public void setAmount(double a){
+        amount = a;
+    }
+    public int getCustomerId(){
+        return customer.getId();
+
+    }
+    public String getCustomerName(){
+        return customer.getName();
+
+    }
+    public int getCustomerDiscount(){
+        return customer.getDiscount();
+    }
+    public double getAmountAfterDiscount(){
+        return amount - (amount * getCustomerDiscount()/100.0);
+
+
+    }
+    public String toString(){
+        return "Invoice[id=" + id + ",customer="+ getCustomerName() + "(" + getCustomerId() + ")(" + getCustomerDiscount() + "%),amount=" + amount + "]";
+    }
+
+}
+
