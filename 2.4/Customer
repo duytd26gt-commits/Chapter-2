@@ -1,0 +1,27 @@
+public class Customer {
+    int id;
+    String name;
+    int discount;
+    public Customer(int i,String n,int d){
+        id = i;
+        name = n;
+        discount = d;
+
+    }
+    public int getId (){
+        return id;
+
+    }
+    public String getName(){
+        return name;
+    }
+    public int getDiscount(){
+        return discount;
+    }
+    public void setDiscount(int d){
+        discount = d;
+    }
+    public String toString(){
+        return name + "(" + id + ")(" + discount + "%)";
+    }
+}
