@@ -1,0 +1,72 @@
+public class Book {
+    String name;
+    Author[] authors;
+    double price;
+    int qty = 0;
+
+    public Book(String n, Author[] a, double p) {
+        name = n;
+        authors = a;
+        price = p;
+    }
+
+    public Book(String n, Author[] a, double p, int q) {
+        name = n;
+        authors = a;
+        price = p;
+        qty = q;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Author[] getAuthors() {
+        return authors;
+
+    }
+
+    public double getPrice() {
+        return price;
+
+    }
+
+    public void setPrice(double p) {
+        price = p;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int q) {
+        qty = q;
+    }
+
+    public String toString() {
+        String authorsStr = "{";
+        for (int i = 0; i < authors.length; i++) {
+            authorsStr += authors[i].toString();
+            if (i < authors.length - 1) {
+                authorsStr += ",";
+            }
+        }
+        authorsStr += "}";
+        return "Book[name=" + name + ",authors=" + authorsStr + ",price=" + price + ",qty=" + qty + "]";
+    }
+
+    public String getAuthorNames() {
+        String authorNames = "";
+        for (int i = 0; i < authors.length; i++) {
+            authorNames += authors[i].getName();
+            if (i < authors.length - 1) {
+                authorNames += " , ";
+
+
+            }
+        }
+        return authorNames;
+    }
+}
+
+
