@@ -1,0 +1,19 @@
+public class TestMyCircle {
+    public static void main(String[] args) {
+        // Khởi tạo đường tròn bằng các constructor khác nhau
+        MyCircle c1 = new MyCircle();                       // Tâm (0,0), radius 1
+        MyCircle c2 = new MyCircle(3, 4, 5);               // Tâm (3,4), radius 5
+        MyCircle c3 = new MyCircle(new MyPoint(6, 8), 10);  // Tâm (6,8), radius 10
+
+        // In thông tin chuỗi toString()
+        System.out.println("c1: " + c1);
+        System.out.println("c2: " + c2);
+
+        // Kiểm tra diện tích và chu vi
+        System.out.printf("Diện tích c2: %.2f%n", c2.getArea());
+        System.out.printf("Chu vi c2: %.2f%n", c2.getCircumference());
+
+        // Tính khoảng cách giữa 2 tâm hình tròn c1 và c2
+        System.out.printf("Khoảng cách giữa c1 và c2: %.2f%n", c1.distance(c2));
+    }
+}
