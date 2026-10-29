@@ -1,0 +1,22 @@
+public class TestMyLine {
+    public static void main(String[] args) {
+        // Tạo thử 2 điểm MyPoint
+        MyPoint p1 = new MyPoint(1, 2);
+        MyPoint p2 = new MyPoint(4, 6);
+
+        // Tạo đoạn thẳng line1 từ 2 MyPoint
+        MyLine line1 = new MyLine(p1, p2);
+        System.out.println(line1); // Kết quả: MyLine[begin=(1,2),end=(4,6)]
+
+        // Tính độ dài (khoảng cách giữa (1,2) và (4,6) là 5.0)
+        System.out.println("Length: " + line1.getLength());
+
+        // Tính góc nghiêng (Radian)
+        System.out.println("Gradient: " + line1.getGradient());
+
+        // Tạo đoạn thẳng line2 từ các tọa độ (0,0) và (3,4)
+        MyLine line2 = new MyLine(0, 0, 3, 4);
+        System.out.println(line2); // Kết quả: MyLine[begin=(0,0),end=(3,4)]
+        System.out.println("Length 2: " + line2.getLength()); // Kết quả: 5.0
+    }
+}
